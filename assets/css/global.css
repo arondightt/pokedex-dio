@@ -1,0 +1,28 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f8fc;
+    background-image: url(https://e0.pxfuel.com/wallpapers/269/183/desktop-wallpaper-rotom-pokedex-background.jpg);
+    background-size: cover; 
+    background-position: center;
+
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    background-color: #ffffff79;
+}
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+}
