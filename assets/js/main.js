@@ -8,7 +8,6 @@ let offset = 0;
 
 var generationsList = document.querySelectorAll('.generations ol li');
 
-// Carregar a primeira geração ao carregar a página
 window.addEventListener('load', function() {
     loadGeneration(0);
 });
@@ -67,15 +66,13 @@ searchInput.addEventListener('input', searchPokemon);
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li class="pokemon ${pokemon.type}" data-number="${pokemon.number}" data-name="${pokemon.name}" data-types="${pokemon.types.join(',')}" data-photo="${pokemon.photo}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
-
             <div class="detail">
                 <ol class="types">
                     ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                 </ol>
-
                 <img src="${pokemon.photo}" alt="${pokemon.name}">
             </div>
         </li>
@@ -108,7 +105,7 @@ document.getElementById("scrollToTopButton").addEventListener("click", function(
 
 window.addEventListener("scroll", function() {
     var scrollToTopButton = document.getElementById("scrollToTopButton");
-    if (window.pageYOffset > 100) {
+    if (window.scrollY > 100) {
         scrollToTopButton.style.display = "block";
     } else {
         scrollToTopButton.style.display = "none";
